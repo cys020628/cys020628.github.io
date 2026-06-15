@@ -14,6 +14,9 @@
 </head>
 <body>
 
+    <!-- Toss 스타일 스크롤 진행률 표시줄 -->
+    <div id="scroll-progress"></div>
+
     <!-- 헤더 영역 -->
     <header>
         <div class="nav-container">
@@ -26,12 +29,12 @@
                 <span></span>
             </button>
 
+            <!-- 네비게이션 및 목차 역할 (Scrollspy 자동 하이라이트 활성화) -->
             <ul class="nav-links" id="nav-menu">
-                <li><a href="#about" id="link-about">About</a></li>
-                <li><a href="#career" id="link-career">Career</a></li>
-                <li><a href="#activities" id="link-activities">Activities</a></li>
-                <li><a href="#skills" id="link-skills">Skills</a></li>
-                <li><a href="#education" id="link-education">Education</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#experience" class="nav-item">Experience</a></li>
+                <li><a href="#skills" class="nav-item">Skills</a></li>
+                <li><a href="#education" class="nav-item">Education</a></li>
             </ul>
         </div>
     </header>
@@ -40,7 +43,7 @@
     <main>
         
         <!-- 히어로 섹션 -->
-        <section class="hero" id="home">
+        <section class="hero reveal" id="home">
             <div class="hero-avatar">🧑‍💻</div>
             <div class="hero-badge">Android & UI/UX Developer</div>
             <h1 id="hero-title">코드 한 줄에도 <br><span>가독성과 논리</span>를 담는 개발자</h1>
@@ -51,7 +54,7 @@
                 <a href="https://github.com/cys020628" target="_blank" class="cta-button cta-secondary" id="btn-github-cta">GitHub</a>
             </div>
 
-            <!-- 인포 카드 그리드 -->
+            <!-- 인포 카드 그리드 (버튼과의 마진을 확보하여 겹치지 않게 설계) -->
             <div class="info-grid">
                 <div class="info-card" id="info-birth">
                     <h4>🎂 Birth</h4>
@@ -73,7 +76,7 @@
         </section>
 
         <!-- About Me 섹션 -->
-        <section id="about">
+        <section id="about" class="reveal">
             <h2 class="section-title">About Me</h2>
             <div class="about-cards">
                 <div class="about-card" id="about-card-1">
@@ -94,12 +97,32 @@
             </div>
         </section>
 
-        <!-- Career 섹션 -->
-        <section id="career">
-            <h2 class="section-title">Career</h2>
+        <!-- Experience 섹션 (커리어와 활동을 최신 순서별로 정렬 및 통합) -->
+        <section id="experience" class="reveal">
+            <h2 class="section-title">Experience & Activities</h2>
             <div class="timeline">
                 
-                <!-- 경력 1 -->
+                <!-- 1. 멋쟁이 사자처럼 캠프 (최신 활동: 2024.09 ~ 2025.03) -->
+                <div class="timeline-item" id="activity-item-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <div class="timeline-title-group">
+                            <span class="timeline-title">멋쟁이 사자처럼 안드로이드 캠프 3기</span>
+                            <span class="timeline-subtitle">국비 지원 교육 과정</span>
+                        </div>
+                        <span class="timeline-date">2024.09 ~ 2025.03</span>
+                    </div>
+                    <div class="timeline-body">
+                        <p>실무 중심의 전문적인 Android 개발 역량을 강화하기 위한 집중 교육 과정입니다.</p>
+                        <ul>
+                            <li><strong>Android 핵심 기술 습득</strong>: 코틀린 고급 함수 활용 및 주요 Android 아키텍처 컴포넌트 실무 적용</li>
+                            <li><strong>팀 프로젝트 2건 수행</strong>: 앱 기획, 시스템 설계, 개발, 배포 및 플레이스토어 심사 대비까지 서비스 전 과정 개발 경험</li>
+                            <li><strong>앱 성능 최적화</strong>: Retrofit, Coroutine 등을 활용해 자원을 효율적으로 관리하는 비동기 네트워크 통신 설계</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. (주)한기술 경력 (과거 활동: 2022.06 ~ 2024.05) -->
                 <div class="timeline-item" id="career-item-1">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
@@ -122,36 +145,8 @@
             </div>
         </section>
 
-        <!-- Activities 섹션 -->
-        <section id="activities">
-            <h2 class="section-title">Activities</h2>
-            <div class="timeline">
-                
-                <!-- 활동 1 -->
-                <div class="timeline-item" id="activity-item-1">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-header">
-                        <div class="timeline-title-group">
-                            <span class="timeline-title">멋쟁이 사자처럼 안드로이드 캠프 3기</span>
-                            <span class="timeline-subtitle">국비 지원 과정</span>
-                        </div>
-                        <span class="timeline-date">2024.09 ~ 2025.03</span>
-                    </div>
-                    <div class="timeline-body">
-                        <p>실무 중심의 전문적인 Android 개발 역량을 강화하기 위한 집중 교육 과정입니다.</p>
-                        <ul>
-                            <li><strong>Android 핵심 기술 습득</strong>: 코틀린 고급 함수 활용 및 주요 Android 아키텍처 컴포넌트 실무 적용</li>
-                            <li><strong>팀 프로젝트 2건 수행</strong>: 앱 기획, 시스템 설계, 개발, 배포 및 플레이스토어 심사 대비까지 서비스 전 과정 개발 경험</li>
-                            <li><strong>앱 성능 최적화</strong>: Retrofit, Coroutine 등을 활용해 자원을 효율적으로 관리하는 비동기 네트워크 통신 설계</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
         <!-- Skills 섹션 -->
-        <section id="skills">
+        <section id="skills" class="reveal">
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
                 <div class="skill-category" id="skills-cat-lang">
@@ -183,7 +178,7 @@
         </section>
 
         <!-- Education 섹션 -->
-        <section id="education">
+        <section id="education" class="reveal">
             <h2 class="section-title">Education</h2>
             <div class="timeline">
                 
@@ -212,24 +207,72 @@
         <p>Designed for Premium Developer CV</p>
     </footer>
 
-    <!-- 모바일 메뉴 제어 스크립트 -->
+    <!-- 모바일 메뉴 및 스크롤 인터랙션 제어 스크립트 -->
     <script>
+        // 1. 모바일 햄버거 메뉴 토글
         const mobileMenuBtn = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
         const navLinks = document.querySelectorAll('.nav-links a');
 
-        // 햄버거 버튼 토글
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenuBtn.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
-        // 링크 클릭 시 메뉴 닫기
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuBtn.classList.remove('active');
                 navMenu.classList.remove('active');
             });
+        });
+
+        // 2. 스크롤 진행률 표시 (Toss 스타일)
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+
+        // 3. Scrollspy (스크롤 기반 메뉴 자동 하이라이트)
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 250)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').slice(1) === current) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+        // 4. Scroll Reveal 애니메이션 (Apple Style)
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                if (rect.top <= windowHeight * 0.85) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // 초기 로드 시 한 번 실행하여 첫 화면 섹션 활성화
+        window.addEventListener('load', () => {
+            revealOnScroll();
+            // 히어로 섹션은 즉시 나타나게 처리
+            const hero = document.querySelector('.hero');
+            if (hero) hero.classList.add('active');
         });
     </script>
 </body>
