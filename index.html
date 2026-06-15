@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZeroStone | Developer Portfolio</title>
-    <meta name="description" content="안녕하세요! 소프트웨어 엔지니어 ZeroStone의 포트폴리오 사이트입니다.">
+    <title>최영석 | Android & System Developer</title>
+    <meta name="description" content="코드 한줄에도 가독성과 논리를 담는 개발자, 최영석의 포트폴리오입니다.">
     <!-- SEO 및 오픈 그래프 설정 -->
-    <meta property="og:title" content="ZeroStone | Developer Portfolio">
-    <meta property="og:description" content="안녕하세요! 소프트웨어 엔지니어 ZeroStone의 포트폴리오 사이트입니다.">
+    <meta property="og:title" content="최영석 | Android & System Developer">
+    <meta property="og:description" content="코드 한줄에도 가독성과 논리를 담는 개발자, 최영석의 포트폴리오입니다.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cys020628.github.io/">
-    <!-- 스타일 연동 -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,12 +17,13 @@
     <!-- 헤더 영역 -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">ZeroStone.dev</a>
+            <a href="#" class="logo" id="nav-logo">YoungSeok.dev</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" id="link-about">About</a></li>
+                <li><a href="#career" id="link-career">Career</a></li>
+                <li><a href="#activities" id="link-activities">Activities</a></li>
+                <li><a href="#skills" id="link-skills">Skills</a></li>
+                <li><a href="#education" id="link-education">Education</a></li>
             </ul>
         </div>
     </header>
@@ -33,90 +33,166 @@
         
         <!-- 히어로 섹션 -->
         <section class="hero" id="home">
-            <div class="hero-badge">Available for Work</div>
-            <h1>안녕하세요, <br>끊임없이 성장하는 개발자 <span>ZeroStone</span>입니다.</h1>
-            <p>다양한 최신 웹 기술에 관심이 많으며, 확장성 있고 유지보수하기 쉬운 클린 코드를 작성하는 것을 목표로 합니다. 사용자 중심의 멋진 경험을 만들어내는 것을 좋아합니다.</p>
-            <a href="#contact" class="cta-button">연락하기</a>
-        </section>
+            <div class="hero-avatar">🧑‍💻</div>
+            <div class="hero-badge">Android & UI/UX Developer</div>
+            <h1 id="hero-title">코드 한 줄에도 <br><span>가독성과 논리</span>를 담는 개발자</h1>
+            <p>전문성 강화를 위해 끊임없이 학습하고 성장하며, 누구나 쉽게 이해하고 유지보수할 수 있는 명확한 구조적 설계를 지향합니다.</p>
+            
+            <div class="cta-group">
+                <a href="mailto:cys020628@naver.com" class="cta-button" id="btn-email-cta">E-Mail 보내기</a>
+                <a href="https://github.com/cys020628" target="_blank" class="cta-button cta-secondary" id="btn-github-cta">GitHub</a>
+            </div>
 
-        <!-- 기술 스택 섹션 -->
-        <section id="skills">
-            <h2 class="section-title">Tech Stack</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item">HTML5 / CSS3</li>
-                        <li class="skill-item">JavaScript (ES6+)</li>
-                        <li class="skill-item">React / Next.js</li>
-                        <li class="skill-item">TypeScript</li>
-                    </ul>
+            <!-- 인포 카드 그리드 -->
+            <div class="info-grid">
+                <div class="info-card" id="info-birth">
+                    <h4>🎂 Birth</h4>
+                    <p>2002.06.28</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item">Node.js (Express)</li>
-                        <li class="skill-item">Python (Django)</li>
-                    </ul>
+                <div class="info-card" id="info-email">
+                    <h4>✉️ E-Mail</h4>
+                    <p><a href="mailto:cys020628@naver.com">cys020628@naver.com</a></p>
                 </div>
-                <div class="skill-category">
-                    <h3>Database & Tools</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item">MySQL / PostgreSQL</li>
-                        <li class="skill-item">Git / GitHub</li>
-                        <li class="skill-item">Docker</li>
-                    </ul>
+                <div class="info-card" id="info-github">
+                    <h4>🐱 Github</h4>
+                    <p><a href="https://github.com/cys020628" target="_blank">github.com/cys020628</a></p>
+                </div>
+                <div class="info-card" id="info-blog">
+                    <h4>💾 Tech Blog</h4>
+                    <p><a href="https://velog.io/@cys020628" target="_blank">velog.io/@cys020628</a></p>
                 </div>
             </div>
         </section>
 
-        <!-- 프로젝트 섹션 -->
-        <section id="projects">
-            <h2 class="section-title">Projects</h2>
-            <div class="grid">
+        <!-- About Me 섹션 -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-cards">
+                <div class="about-card" id="about-card-1">
+                    <div class="about-icon">🔍</div>
+                    <h3>가독성과 논리적 설계</h3>
+                    <p>학습을 거듭하며 가독성과 구조적 완성도를 높이는 데 집중합니다. 한 줄의 코드라도 동료 개발자가 쉽게 이해할 수 있도록 명확하게 설계하고 작성합니다.</p>
+                </div>
+                <div class="about-card" id="about-card-2">
+                    <div class="about-icon">📚</div>
+                    <h3>지속적인 전문성 강화</h3>
+                    <p>안주하지 않고 매일 공부하며 지속적인 기술 서적 독서를 통해 전문성을 강화합니다. 어제보다 한 걸음 더 성장하는 개발자가 되는 것이 목표입니다.</p>
+                </div>
+                <div class="about-card" id="about-card-3">
+                    <div class="about-icon">🤝</div>
+                    <h3>시스템 UI/UX 설계</h3>
+                    <p>실제 사용자가 매끄럽고 편리한 경험을 할 수 있도록 UI/UX를 세심하게 고민하여 설계하고 구현합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career 섹션 -->
+        <section id="career">
+            <h2 class="section-title">Career</h2>
+            <div class="timeline">
                 
-                <!-- 프로젝트 1 -->
-                <div class="card project-card">
-                    <h3>커뮤니티 웹 애플리케이션</h3>
-                    <p>사용자 간 실시간 소통과 정보 공유를 돕는 웹 애플리케이션 프로젝트입니다. 반응형 레이아웃 및 깔끔한 사용자 인터페이스를 탑재하였습니다.</p>
-                    <div class="tag-container">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Express</span>
-                        <span class="tag">MySQL</span>
+                <!-- 경력 1 -->
+                <div class="timeline-item" id="career-item-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-title">(주)한기술</span>
+                            <span class="timeline-subtitle"> | UI/UX & System 개발자</span>
+                        </div>
+                        <span class="timeline-date">2022.06 ~ 2024.05</span>
                     </div>
-                    <a href="https://github.com/cys020628" target="_blank" class="project-link">
-                        View Repository <span>→</span>
-                    </a>
-                </div>
-
-                <!-- 프로젝트 2 -->
-                <div class="card project-card">
-                    <h3>개인 포트폴리오 웹사이트</h3>
-                    <p>GitHub Pages를 사용하여 정적 웹 호스팅을 구축한 저만의 이력서 및 포트폴리오 페이지입니다.</p>
-                    <div class="tag-container">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">GitHub Pages</span>
+                    <div class="timeline-body">
+                        <p>엘리베이터 부품 및 LCD 개발 전문 기업에서 LCD 기반의 층 표시 장비 시스템의 UI/UX 설계 및 시스템 코어를 담당하였습니다.</p>
+                        <ul>
+                            <li><strong>엘리베이터 층 표시기 LCD 개발</strong>: Java, Kotlin을 활용한 UI/UX 설계 및 시스템 개발</li>
+                            <li><strong>국책 과제 프로젝트 수행</strong>: Java, Kotlin 기반으로 헬스케어 전자 매트와 모바일 앱 간의 실시간 연동 시스템 구축</li>
+                            <li><strong>데이터 동기화 설계</strong>: 저지연 블루투스/네트워크 통신을 통한 데이터 관리 및 연동 기술 안정화</li>
+                        </ul>
                     </div>
-                    <a href="https://github.com/cys020628/cys020628.github.io" target="_blank" class="project-link">
-                        View Repository <span>→</span>
-                    </a>
                 </div>
 
             </div>
         </section>
 
-        <!-- 연락처 섹션 -->
-        <section id="contact">
-            <div class="contact-container">
-                <h2>Let's build something together</h2>
-                <p>새로운 프로젝트 제안이나 협업 문의, 혹은 커피 한잔의 대화 등 언제나 환영합니다!</p>
-                <div class="contact-links">
-                    <a href="mailto:your.email@example.com" class="contact-btn">이메일 보내기</a>
-                    <a href="https://github.com/cys020628" target="_blank" class="contact-btn">GitHub 방문하기</a>
+        <!-- Activities 섹션 -->
+        <section id="activities">
+            <h2 class="section-title">Activities</h2>
+            <div class="timeline">
+                
+                <!-- 활동 1 -->
+                <div class="timeline-item" id="activity-item-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-title">멋쟁이 사자처럼 안드로이드 캠프 3기</span>
+                            <span class="timeline-subtitle"> | 국비 지원 과정</span>
+                        </div>
+                        <span class="timeline-date">2024.09 ~ 2025.03</span>
+                    </div>
+                    <div class="timeline-body">
+                        <p>실무 중심의 전문적인 Android 개발 역량을 강화하기 위한 집중 교육 과정입니다.</p>
+                        <ul>
+                            <li><strong>Android 핵심 기술 습득</strong>: 코틀린 고급 함수 활용 및 주요 Android 아키텍처 컴포넌트 실무 적용</li>
+                            <li><strong>팀 프로젝트 2건 수행</strong>: 앱 기획, 시스템 설계, 개발, 배포 및 플레이스토어 심사 대비까지 서비스 전 과정 개발 경험</li>
+                            <li><strong>앱 성능 최적화</strong>: Retrofit, Coroutine 등을 활용해 자원을 효율적으로 관리하는 비동기 네트워크 통신 설계</li>
+                        </ul>
+                    </div>
                 </div>
+
+            </div>
+        </section>
+
+        <!-- Skills 섹션 -->
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category" id="skills-cat-lang">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag highlight">Kotlin</span>
+                        <span class="skill-tag highlight">Java</span>
+                        <span class="skill-tag">XML</span>
+                    </div>
+                </div>
+                <div class="skill-category" id="skills-cat-android">
+                    <h3>Android & System</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag highlight">Android SDK</span>
+                        <span class="skill-tag">Retrofit2</span>
+                        <span class="skill-tag">Coroutine</span>
+                        <span class="skill-tag">UI/UX Layout</span>
+                    </div>
+                </div>
+                <div class="skill-category" id="skills-cat-tools">
+                    <h3>Tools & Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">Android Studio</span>
+                        <span class="skill-tag">SQLite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education 섹션 -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item" id="edu-item-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-title">삼일 공업 고등학교</span>
+                            <span class="timeline-subtitle"> | 정보통신과 졸업</span>
+                        </div>
+                        <span class="timeline-date">2018.03 ~ 2021.02</span>
+                    </div>
+                    <div class="timeline-body">
+                        <p>정보통신 분야의 기초 전공 이론 및 소프트웨어 기초 지식을 학습하였습니다.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -124,7 +200,8 @@
 
     <!-- 푸터 영역 -->
     <footer>
-        <p>&copy; 2026 ZeroStone. All rights reserved.</p>
+        <p>&copy; 2026 최영석. All rights reserved.</p>
+        <p>Designed for Premium Developer CV</p>
     </footer>
 
 </body>
