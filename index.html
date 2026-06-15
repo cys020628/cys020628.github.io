@@ -18,7 +18,15 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo" id="nav-logo">YoungSeok.dev</a>
-            <ul class="nav-links">
+            
+            <!-- 모바일 햄버거 버튼 -->
+            <button class="menu-toggle" id="mobile-menu" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="#about" id="link-about">About</a></li>
                 <li><a href="#career" id="link-career">Career</a></li>
                 <li><a href="#activities" id="link-activities">Activities</a></li>
@@ -95,9 +103,9 @@
                 <div class="timeline-item" id="career-item-1">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
-                        <div>
+                        <div class="timeline-title-group">
                             <span class="timeline-title">(주)한기술</span>
-                            <span class="timeline-subtitle"> | UI/UX & System 개발자</span>
+                            <span class="timeline-subtitle">UI/UX & System 개발자</span>
                         </div>
                         <span class="timeline-date">2022.06 ~ 2024.05</span>
                     </div>
@@ -123,9 +131,9 @@
                 <div class="timeline-item" id="activity-item-1">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
-                        <div>
+                        <div class="timeline-title-group">
                             <span class="timeline-title">멋쟁이 사자처럼 안드로이드 캠프 3기</span>
-                            <span class="timeline-subtitle"> | 국비 지원 과정</span>
+                            <span class="timeline-subtitle">국비 지원 과정</span>
                         </div>
                         <span class="timeline-date">2024.09 ~ 2025.03</span>
                     </div>
@@ -182,9 +190,9 @@
                 <div class="timeline-item" id="edu-item-1">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
-                        <div>
+                        <div class="timeline-title-group">
                             <span class="timeline-title">삼일 공업 고등학교</span>
-                            <span class="timeline-subtitle"> | 정보통신과 졸업</span>
+                            <span class="timeline-subtitle">정보통신과 졸업</span>
                         </div>
                         <span class="timeline-date">2018.03 ~ 2021.02</span>
                     </div>
@@ -204,5 +212,25 @@
         <p>Designed for Premium Developer CV</p>
     </footer>
 
+    <!-- 모바일 메뉴 제어 스크립트 -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        // 햄버거 버튼 토글
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 링크 클릭 시 메뉴 닫기
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
