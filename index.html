@@ -3,278 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>최영석 | Android & System Developer</title>
-    <meta name="description" content="코드 한줄에도 가독성과 논리를 담는 개발자, 최영석의 포트폴리오입니다.">
-    <!-- SEO 및 오픈 그래프 설정 -->
-    <meta property="og:title" content="최영석 | Android & System Developer">
-    <meta property="og:description" content="코드 한줄에도 가독성과 논리를 담는 개발자, 최영석의 포트폴리오입니다.">
+    <title>최영석 | Android Developer</title>
+    <meta name="description" content="가독성, 논리적 설계, 접근성을 고민하는 Android Developer 최영석의 포트폴리오입니다.">
+    <meta property="og:title" content="최영석 | Android Developer">
+    <meta property="og:description" content="가독성, 논리적 설계, 접근성을 고민하는 Android Developer 최영석의 포트폴리오입니다.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cys020628.github.io/">
     <link rel="stylesheet" href="style.css">
-    <!-- 파비콘 설정 -->
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-
-    <!-- Toss 스타일 스크롤 진행률 표시줄 -->
     <div id="scroll-progress"></div>
 
-    <!-- 헤더 영역 -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo" id="nav-logo">YoungSeok.dev</a>
-            
-            <!-- 모바일 햄버거 버튼 -->
-            <button class="menu-toggle" id="mobile-menu" aria-label="메뉴 열기">
+            <a href="#home" class="logo" id="nav-logo">YoungSeok.dev</a>
+            <button class="menu-toggle" id="mobile-menu" aria-label="메뉴 열기" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-
-            <!-- 네비게이션 및 목차 역할 (Scrollspy 자동 하이라이트 활성화) -->
             <ul class="nav-links" id="nav-menu">
                 <li><a href="#about" class="nav-item">About</a></li>
                 <li><a href="#experience" class="nav-item">Experience</a></li>
+                <li><a href="#projects" class="nav-item">Projects</a></li>
                 <li><a href="#skills" class="nav-item">Skills</a></li>
                 <li><a href="#education" class="nav-item">Education</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- 메인 콘텐츠 영역 -->
     <main>
-        
-        <!-- 히어로 섹션 -->
         <section class="hero reveal" id="home">
-            <div class="hero-avatar">🧑‍💻</div>
-            <div class="hero-badge">Android & UI/UX Developer</div>
-            <h1 id="hero-title">코드 한 줄에도 <br><span>가독성과 논리</span>를 담는 개발자</h1>
-            <p>전문성 강화를 위해 끊임없이 학습하고 성장하며, 누구나 쉽게 이해하고 유지보수할 수 있는 명확한 구조적 설계를 지향합니다.</p>
-            
+            <p class="eyebrow">Android Developer</p>
+            <h1>잘 되는 앱보다,<br><span>잘 짜인 코드</span>를 추구합니다.</h1>
+            <p class="hero-copy">기술로 일상의 불편을 설계하는 개발자입니다. 가독성, 구조적 설계, 접근성을 기준으로 오래 유지보수할 수 있는 Android 앱을 만듭니다.</p>
+
             <div class="cta-group">
-                <a href="mailto:cys020628@naver.com" class="cta-button" id="btn-email-cta">E-Mail 보내기</a>
-                <a href="https://github.com/cys020628" target="_blank" class="cta-button cta-secondary" id="btn-github-cta">GitHub</a>
+                <a href="mailto:cys020628@naver.com" class="cta-button">E-Mail 보내기</a>
+                <a href="https://github.com/cys020628" target="_blank" rel="noopener" class="cta-button cta-secondary">GitHub 보기</a>
             </div>
 
-            <!-- 인포 카드 그리드 (버튼과의 마진을 확보하여 겹치지 않게 설계) -->
-            <div class="info-grid">
-                <div class="info-card" id="info-birth">
-                    <h4>🎂 Birth</h4>
-                    <p>2002.06.28</p>
-                </div>
-                <div class="info-card" id="info-email">
-                    <h4>✉️ E-Mail</h4>
-                    <p><a href="mailto:cys020628@naver.com">cys020628@naver.com</a></p>
-                </div>
-                <div class="info-card" id="info-github">
-                    <h4>🐱 Github</h4>
-                    <p><a href="https://github.com/cys020628" target="_blank">github.com/cys020628</a></p>
-                </div>
-                <div class="info-card" id="info-blog">
-                    <h4>💾 Tech Blog</h4>
-                    <p><a href="https://velog.io/@cys020628" target="_blank">velog.io/@cys020628</a></p>
+            <div class="profile-grid">
+                <a class="profile-item" href="mailto:cys020628@naver.com">
+                    <span>Email</span>
+                    <strong>cys020628@naver.com</strong>
+                </a>
+                <a class="profile-item" href="https://github.com/cys020628" target="_blank" rel="noopener">
+                    <span>GitHub</span>
+                    <strong>github.com/cys020628</strong>
+                </a>
+                <a class="profile-item" href="https://velog.io/@cys020628" target="_blank" rel="noopener">
+                    <span>Tech Blog</span>
+                    <strong>velog.io/@cys020628</strong>
+                </a>
+                <div class="profile-item">
+                    <span>Birth</span>
+                    <strong>2002.06.28</strong>
                 </div>
             </div>
         </section>
 
-        <!-- About Me 섹션 -->
         <section id="about" class="reveal">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-cards">
-                <div class="about-card" id="about-card-1">
-                    <div class="about-icon">🔍</div>
+            <div class="section-heading">
+                <p class="section-kicker">About Me</p>
+                <h2 class="section-title">읽기 쉬운 구조로 문제를 해결합니다.</h2>
+            </div>
+            <div class="about-layout">
+                <article>
                     <h3>가독성과 논리적 설계</h3>
-                    <p>학습을 거듭하며 가독성과 구조적 완성도를 높이는 데 집중합니다. 한 줄의 코드라도 동료 개발자가 쉽게 이해할 수 있도록 명확하게 설계하고 작성합니다.</p>
-                </div>
-                <div class="about-card" id="about-card-2">
-                    <div class="about-icon">📚</div>
-                    <h3>지속적인 전문성 강화</h3>
-                    <p>안주하지 않고 매일 공부하며 지속적인 기술 서적 독서를 통해 전문성을 강화합니다. 어제보다 한 걸음 더 성장하는 개발자가 되는 것이 목표입니다.</p>
-                </div>
-                <div class="about-card" id="about-card-3">
-                    <div class="about-icon">🤝</div>
-                    <h3>시스템 UI/UX 설계</h3>
-                    <p>실제 사용자가 매끄럽고 편리한 경험을 할 수 있도록 UI/UX를 세심하게 고민하여 설계하고 구현합니다.</p>
-                </div>
+                    <p>한 줄의 코드라도 동료 개발자가 쉽게 이해할 수 있도록 명확한 책임 분리와 일관된 흐름을 중요하게 생각합니다.</p>
+                </article>
+                <article>
+                    <h3>사용자 경험 중심 구현</h3>
+                    <p>기능 구현에서 멈추지 않고 실제 사용자가 매끄럽게 사용할 수 있는 흐름, 화면 구조, 예외 상황을 함께 설계합니다.</p>
+                </article>
+                <article>
+                    <h3>꾸준한 학습과 개선</h3>
+                    <p>실습, 강의, 기술 서적을 병행하며 Android 아키텍처와 UI 구현 역량을 계속 확장하고 있습니다.</p>
+                </article>
             </div>
         </section>
 
-        <!-- Experience 섹션 (커리어와 활동을 최신 순서별로 정렬 및 통합) -->
         <section id="experience" class="reveal">
-            <h2 class="section-title">Experience & Activities</h2>
+            <div class="section-heading">
+                <p class="section-kicker">Experience</p>
+                <h2 class="section-title">상용 장비부터 모바일 앱까지 다뤘습니다.</h2>
+            </div>
             <div class="timeline">
-                
-                <!-- 1. 멋쟁이 사자처럼 캠프 (최신 활동: 2024.09 ~ 2025.03) -->
-                <div class="timeline-item" id="activity-item-1">
-                    <div class="timeline-dot"></div>
+                <article class="timeline-item">
                     <div class="timeline-header">
-                        <div class="timeline-title-group">
-                            <span class="timeline-title">멋쟁이 사자처럼 안드로이드 캠프 3기</span>
-                            <span class="timeline-subtitle">국비 지원 교육 과정</span>
+                        <div>
+                            <h3>멋쟁이사자처럼 Android Camp 3기</h3>
+                            <p>국비 지원 Android 집중 교육 과정</p>
                         </div>
-                        <span class="timeline-date">2024.09 ~ 2025.03</span>
+                        <time>2024.09 ~ 2025.03</time>
                     </div>
-                    <div class="timeline-body">
-                        <p>실무 중심의 전문적인 Android 개발 역량을 강화하기 위한 집중 교육 과정입니다.</p>
-                        <ul>
-                            <li><strong>Android 핵심 기술 습득</strong>: 코틀린 고급 함수 활용 및 주요 Android 아키텍처 컴포넌트 실무 적용</li>
-                            <li><strong>팀 프로젝트 2건 수행</strong>: 앱 기획, 시스템 설계, 개발, 배포 및 플레이스토어 심사 대비까지 서비스 전 과정 개발 경험</li>
-                            <li><strong>앱 성능 최적화</strong>: Retrofit, Coroutine 등을 활용해 자원을 효율적으로 관리하는 비동기 네트워크 통신 설계</li>
-                        </ul>
-                    </div>
-                </div>
+                    <ul>
+                        <li>Kotlin, Android Architecture Component, Coroutine, Retrofit 기반 실무형 앱 개발 학습</li>
+                        <li>팀 프로젝트 2건에서 기획, 화면 설계, API 연동, 배포 준비 과정 참여</li>
+                        <li>비동기 네트워크 처리와 리소스 관리 중심으로 앱 안정성 개선 경험 축적</li>
+                    </ul>
+                </article>
 
-                <!-- 2. (주)한기술 경력 (과거 활동: 2022.06 ~ 2024.05) -->
-                <div class="timeline-item" id="career-item-1">
-                    <div class="timeline-dot"></div>
+                <article class="timeline-item">
                     <div class="timeline-header">
-                        <div class="timeline-title-group">
-                            <span class="timeline-title">(주)한기술</span>
-                            <span class="timeline-subtitle">UI/UX & System 개발자</span>
+                        <div>
+                            <h3>(주)한기술</h3>
+                            <p>UI/UX & System Developer</p>
                         </div>
-                        <span class="timeline-date">2022.06 ~ 2024.05</span>
+                        <time>2022.06 ~ 2024.06</time>
                     </div>
-                    <div class="timeline-body">
-                        <p>엘리베이터 부품 및 LCD 개발 전문 기업에서 LCD 기반의 층 표시 장비 시스템의 UI/UX 설계 및 시스템 코어를 담당하였습니다.</p>
-                        <ul>
-                            <li><strong>엘리베이터 층 표시기 LCD 개발</strong>: Java, Kotlin을 활용한 UI/UX 설계 및 시스템 개발</li>
-                            <li><strong>국책 과제 프로젝트 수행</strong>: Java, Kotlin 기반으로 헬스케어 전자 매트와 모바일 앱 간의 실시간 연동 시스템 구축</li>
-                            <li><strong>데이터 동기화 설계</strong>: 저지연 블루투스/네트워크 통신을 통한 데이터 관리 및 연동 기술 안정화</li>
-                        </ul>
-                    </div>
-                </div>
-
+                    <ul>
+                        <li>엘리베이터 LCD 인디케이터 UI/UX 및 시스템 코어 개발</li>
+                        <li>Serial 통신 기반 층수 동기화, USB 미디어 업데이트, 장비 연동 기능 구현</li>
+                        <li>국책 과제 치매 예방 스마트 운동 앱에서 BLE 데이터 수집, 차트 시각화, 인증 및 API 연동 담당</li>
+                    </ul>
+                </article>
             </div>
         </section>
 
-        <!-- Skills 섹션 -->
+        <section id="projects" class="reveal">
+            <div class="section-heading">
+                <p class="section-kicker">Projects</p>
+                <h2 class="section-title">회사 프로젝트와 사이드 프로젝트를 구분해 정리했습니다.</h2>
+            </div>
+
+            <div class="project-block">
+                <div class="block-title">
+                    <span>Company Work</span>
+                    <p>한기술 재직 중 수행한 주요 프로젝트입니다. 카드를 누르면 상세 내용을 확인할 수 있습니다.</p>
+                </div>
+                <div class="project-grid">
+                    <button class="project-card detail-trigger" type="button" data-project="elevator">
+                        <span class="project-label">Project 01</span>
+                        <h3>엘리베이터 LCD 시스템 개발</h3>
+                        <p>Serial 통신 기반 실시간 층수 동기화, USB 콘텐츠 업데이트, LCD 표시 장비 UI/UX 개발.</p>
+                        <div class="tag-row">
+                            <span>Kotlin</span><span>Java</span><span>Serial</span><span>SVN</span>
+                        </div>
+                    </button>
+
+                    <button class="project-card detail-trigger" type="button" data-project="healthcare">
+                        <span class="project-label">Project 02</span>
+                        <h3>치매 예방 스마트 운동 앱</h3>
+                        <p>BLE 기반 운동 데이터 수집과 차트 시각화, OAuth 인증, REST API 연동을 포함한 국책 과제 앱.</p>
+                        <div class="tag-row">
+                            <span>BLE</span><span>Retrofit2</span><span>FCM</span><span>Chart</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-block side-projects">
+                <div class="block-title">
+                    <span>Side Projects</span>
+                    <p>개인 학습과 실사용 개선을 목표로 참여한 프로젝트입니다.</p>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <span class="project-label">Side 01</span>
+                        <h3>Sooum - 익명 감정 공유 SNS</h3>
+                        <p>기존 앱 리팩터링과 신규 기능 개발에 참여했습니다. Paging3로 로딩 흐름을 개선하고 Clean Architecture 기반으로 구조를 정리했습니다.</p>
+                        <ul class="compact-list">
+                            <li>OAuth 기반 소셜 로그인과 FCM, Google Analytics 연동</li>
+                            <li>순차 데이터 로딩 최적화로 체감 로딩 시간 개선</li>
+                            <li>Compose 기반 화면 구조와 기능 개선 주도</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span>Kotlin</span><span>Compose</span><span>Paging3</span><span>Clean Architecture</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <span class="project-label">Side 02</span>
+                        <h3>픽포미 - 시각장애인 쇼핑 앱</h3>
+                        <p>디지털 정보 접근성 솔루션 기업 시공간의 사이드 프로젝트로 참여한 Android 앱입니다. 시각장애인을 위한 쇼핑 경험을 TalkBack 중심으로 설계했습니다.</p>
+                        <ul class="compact-list">
+                            <li>Android 접근성 기능 TalkBack 흐름을 고려한 UI 구현</li>
+                            <li>MVI, Multi Module, Clean Architecture 기반 앱 구조 설계</li>
+                            <li>Hilt를 활용한 의존성 주입과 Compose UI 구현</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/Si-gongan" target="_blank" rel="noopener">시공간 GitHub</a>
+                            <a href="https://www.sigongan.com/" target="_blank" rel="noopener">시공간 서비스</a>
+                        </div>
+                        <div class="tag-row">
+                            <span>Compose</span><span>Hilt</span><span>MVI</span><span>TalkBack</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section id="skills" class="reveal">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category" id="skills-cat-lang">
+            <div class="section-heading">
+                <p class="section-kicker">Skills</p>
+                <h2 class="section-title">Android 앱 구조와 통신 흐름에 강점이 있습니다.</h2>
+            </div>
+            <div class="skills-grid">
+                <article>
                     <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag highlight">Kotlin</span>
-                        <span class="skill-tag highlight">Java</span>
-                        <span class="skill-tag">XML</span>
+                    <div class="tag-row">
+                        <span>Kotlin</span><span>Java</span><span>Swift Basic</span><span>XML</span>
                     </div>
-                </div>
-                <div class="skill-category" id="skills-cat-android">
-                    <h3>Android & System</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag highlight">Android SDK</span>
-                        <span class="skill-tag">Retrofit2</span>
-                        <span class="skill-tag">Coroutine</span>
-                        <span class="skill-tag">UI/UX Layout</span>
+                </article>
+                <article>
+                    <h3>Android</h3>
+                    <div class="tag-row">
+                        <span>Jetpack Compose</span><span>Navigation</span><span>ViewModel</span><span>DataStore</span><span>Room</span>
                     </div>
-                </div>
-                <div class="skill-category" id="skills-cat-tools">
-                    <h3>Tools & Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git / GitHub</span>
-                        <span class="skill-tag">Android Studio</span>
-                        <span class="skill-tag">SQLite</span>
+                </article>
+                <article>
+                    <h3>Architecture</h3>
+                    <div class="tag-row">
+                        <span>MVVM</span><span>MVI</span><span>Clean Architecture</span><span>Multi Module</span>
                     </div>
-                </div>
+                </article>
+                <article>
+                    <h3>Communication</h3>
+                    <div class="tag-row">
+                        <span>Retrofit2</span><span>Coroutine</span><span>Flow</span><span>BLE</span><span>Serial</span><span>FCM</span>
+                    </div>
+                </article>
+                <article>
+                    <h3>Tools</h3>
+                    <div class="tag-row">
+                        <span>Git</span><span>GitHub</span><span>SVN</span><span>Android Studio</span><span>AWS EC2/S3</span>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- Education 섹션 -->
         <section id="education" class="reveal">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                
-                <div class="timeline-item" id="edu-item-1">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-header">
-                        <div class="timeline-title-group">
-                            <span class="timeline-title">삼일 공업 고등학교</span>
-                            <span class="timeline-subtitle">정보통신과 졸업</span>
-                        </div>
-                        <span class="timeline-date">2018.03 ~ 2021.02</span>
-                    </div>
-                    <div class="timeline-body">
-                        <p>정보통신 분야의 기초 전공 이론 및 소프트웨어 기초 지식을 학습하였습니다.</p>
-                    </div>
+            <div class="section-heading">
+                <p class="section-kicker">Education</p>
+                <h2 class="section-title">정보통신 기반에서 Android 개발로 확장했습니다.</h2>
+            </div>
+            <div class="education-card">
+                <div>
+                    <h3>삼일공업고등학교</h3>
+                    <p>정보통신과 졸업 · 통신선로기능사 취득 · 전자회로 및 Java 기반 Android 기초 학습</p>
                 </div>
-
+                <time>2018.03 ~ 2021.03</time>
             </div>
         </section>
-
     </main>
 
-    <!-- 푸터 영역 -->
+    <div class="modal-backdrop" id="project-modal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" type="button" aria-label="상세 창 닫기">×</button>
+            <p class="project-label" id="modal-label"></p>
+            <h2 id="modal-title"></h2>
+            <p id="modal-summary"></p>
+            <div class="modal-content" id="modal-content"></div>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 최영석. All rights reserved.</p>
-        <p>Designed for Premium Developer CV</p>
+        <p>Designed for Android Developer CV</p>
     </footer>
 
-    <!-- 모바일 메뉴 및 스크롤 인터랙션 제어 스크립트 -->
     <script>
-        // 1. 모바일 햄버거 메뉴 토글
         const mobileMenuBtn = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
         const navLinks = document.querySelectorAll('.nav-links a');
 
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
+            const isOpen = mobileMenuBtn.classList.toggle('active');
             navMenu.classList.toggle('active');
+            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
         });
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuBtn.classList.remove('active');
                 navMenu.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
         });
 
-        // 2. 스크롤 진행률 표시 (Toss 스타일)
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
             document.getElementById('scroll-progress').style.width = scrolled + '%';
         });
 
-        // 3. Scrollspy (스크롤 기반 메뉴 자동 하이라이트)
         const sections = document.querySelectorAll('section');
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 250)) {
+                if (window.scrollY >= section.offsetTop - 260) {
                     current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href').slice(1) === current) {
-                    a.classList.add('active');
-                }
+                a.classList.toggle('active', a.getAttribute('href').slice(1) === current);
             });
         });
 
-        // 4. Scroll Reveal 애니메이션 (Apple Style)
         const revealElements = document.querySelectorAll('.reveal');
         const revealOnScroll = () => {
             revealElements.forEach(el => {
                 const rect = el.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                if (rect.top <= windowHeight * 0.85) {
+                if (rect.top <= window.innerHeight * 0.85) {
                     el.classList.add('active');
                 }
             });
         };
 
         window.addEventListener('scroll', revealOnScroll);
-        // 초기 로드 시 한 번 실행하여 첫 화면 섹션 활성화
         window.addEventListener('load', () => {
             revealOnScroll();
-            // 히어로 섹션은 즉시 나타나게 처리
-            const hero = document.querySelector('.hero');
-            if (hero) hero.classList.add('active');
+            document.querySelector('.hero')?.classList.add('active');
+        });
+
+        const projectDetails = {
+            elevator: {
+                label: 'Company Project 01',
+                title: '엘리베이터 LCD 시스템 개발',
+                summary: '한기술 재직 중 수행한 LCD 인디케이터 시스템 개발 프로젝트입니다. 상용 현장 장비와 연동되는 실시간 표시 안정성에 집중했습니다.',
+                sections: [
+                    ['기술 환경', ['Kotlin, Java, AWS, MySQL, PHP', 'Zeplin, Figma, SVN']],
+                    ['핵심 구현', ['0xAA 헤더 기반 Serial 통신 패킷 분석 및 CRC 체크 처리', '백그라운드 서비스와 Coroutine 조합으로 실시간 층수 데이터 갱신', 'USB 연결 이벤트 감지 후 미디어 자동 인식 및 콘텐츠 업데이트 구현']],
+                    ['성과', ['GS타워 상용 환경 연동 및 검증', '실사용 피드백 기반 LCD UI/UX와 장비 동작 흐름 개선', '복잡한 장비 통신 예외 상황을 고려한 안정화 경험 축적']]
+                ]
+            },
+            healthcare: {
+                label: 'Company Project 02',
+                title: '국책 과제: 치매 예방 스마트 운동 앱',
+                summary: '헬스케어 전자 매트와 모바일 앱을 연동해 운동 데이터를 수집하고 시각화하는 국책 과제 프로젝트입니다.',
+                sections: [
+                    ['기술 환경', ['Java, Kotlin, AWS, BLE, Retrofit2', 'FCM, OAuth2, MpAndroidChart']],
+                    ['핵심 구현', ['BLE 기반 운동 데이터 실시간 수집 및 상태 처리', 'OAuth2 인증과 REST API 연동 흐름 설계', 'Line/Bar Chart 커스터마이징으로 운동 기록 시각화']],
+                    ['성과', ['일반 앱과 B2B 앱 흐름에 맞춘 사용자 중심 UX 개선', '디자인, 서버, 기획 등 다양한 직군과 협업', '데이터 수집부터 시각화까지 이어지는 앱 구조 구현 경험']]
+                ]
+            }
+        };
+
+        const modal = document.getElementById('project-modal');
+        const modalLabel = document.getElementById('modal-label');
+        const modalTitle = document.getElementById('modal-title');
+        const modalSummary = document.getElementById('modal-summary');
+        const modalContent = document.getElementById('modal-content');
+        const closeModal = document.querySelector('.modal-close');
+
+        const openProjectModal = (projectId) => {
+            const detail = projectDetails[projectId];
+            if (!detail) return;
+
+            modalLabel.textContent = detail.label;
+            modalTitle.textContent = detail.title;
+            modalSummary.textContent = detail.summary;
+            modalContent.innerHTML = detail.sections.map(([heading, items]) => `
+                <section class="modal-section">
+                    <h3>${heading}</h3>
+                    <ul>${items.map(item => `<li>${item}</li>`).join('')}</ul>
+                </section>
+            `).join('');
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+            closeModal.focus();
+        };
+
+        const hideModal = () => {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        };
+
+        document.querySelectorAll('.detail-trigger').forEach(card => {
+            card.addEventListener('click', () => openProjectModal(card.dataset.project));
+        });
+
+        closeModal.addEventListener('click', hideModal);
+        modal.addEventListener('click', event => {
+            if (event.target === modal) hideModal();
+        });
+        window.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && modal.classList.contains('active')) hideModal();
         });
     </script>
 </body>
