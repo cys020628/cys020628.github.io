@@ -11,9 +11,15 @@ tags:
 
 # Toss-style Portfolio Redesign Architecture
 
+## 0. 구현 메모
+
+현재 배포 화면은 GitHub Pages 정적 호스팅을 유지하기 위해 `index.html`을 Tailwind CDN 기반으로 재작성했다. 전역 `style.css` 의존은 제거했고, 주요 섹션은 Tailwind utility class와 짧은 DOM 인터랙션으로 구성했다.
+
+Next.js 전환 시에는 아래 제안 아키텍처를 기준으로 `data/portfolio.ts`와 섹션 컴포넌트로 분리한다.
+
 ## 1. 현재 아키텍처 문제
 
-현재 사이트는 `index.html` 하나에 콘텐츠, 화면 구조, 모달 데이터, 인터랙션 스크립트가 함께 들어 있다. `style.css`도 전역 클래스 기반이라 섹션이 늘어날수록 스타일 충돌 가능성이 커진다.
+기존 사이트는 `index.html` 하나에 콘텐츠, 화면 구조, 모달 데이터, 인터랙션 스크립트가 함께 들어 있었다. `style.css`도 전역 클래스 기반이라 섹션이 늘어날수록 스타일 충돌 가능성이 컸다.
 
 ### 문제점
 - 콘텐츠와 UI 구조가 분리되어 있지 않아 프로젝트, 스택, 연락처 문구를 수정할 때 HTML 전체를 직접 건드려야 한다.
@@ -236,4 +242,3 @@ UX 이유: Footer는 신뢰 정보를 남기는 최소 영역이다. Contact CTA
 - 모바일 360px, 390px, 768px, 데스크톱 1280px에서 텍스트 줄바꿈 확인.
 - Lighthouse 접근성 확인.
 - GitHub Pages 배포 방식에 맞춰 static export 또는 현재 정적 배포 전략 선택.
-

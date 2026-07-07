@@ -1,243 +1,253 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>최영석 | Android Developer</title>
-    <meta name="description" content="Android, Compose, 접근성, 시스템 통신 경험을 가진 개발자 최영석의 포트폴리오입니다.">
+    <meta name="description" content="Compose, Clean Architecture, 접근성, BLE/Serial 통신 경험을 가진 Android 개발자 최영석의 포트폴리오입니다.">
     <meta property="og:title" content="최영석 | Android Developer">
-    <meta property="og:description" content="Android, Compose, 접근성, 시스템 통신 경험을 가진 개발자 최영석의 포트폴리오입니다.">
+    <meta property="og:description" content="사용자가 오래 머무는 Android 경험을 만드는 개발자 최영석의 포트폴리오입니다.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yseok.dev/">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
+    <script>
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gray: {
+                            0: '#ffffff',
+                            50: '#f9fafb',
+                            100: '#f2f4f6',
+                            200: '#e5e8eb',
+                            300: '#d1d6db',
+                            400: '#b0b8c1',
+                            500: '#8b95a1',
+                            600: '#6b7684',
+                            700: '#4e5968',
+                            800: '#333d4b',
+                            900: '#191f28'
+                        },
+                        accent: {
+                            DEFAULT: '#3182f6',
+                            pressed: '#1b64da',
+                            soft: '#e8f3ff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans KR', 'system-ui', 'sans-serif']
+                    },
+                    boxShadow: {
+                        card: '0 12px 32px rgba(25, 31, 40, 0.08)',
+                        'card-hover': '0 18px 48px rgba(25, 31, 40, 0.14)',
+                        cta: '0 10px 24px rgba(49, 130, 246, 0.26)'
+                    },
+                    transitionTimingFunction: {
+                        toss: 'cubic-bezier(0.2, 0, 0, 1)'
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div id="scroll-progress"></div>
-
-    <header>
-        <div class="nav-container">
-            <a href="#home" class="logo">YoungSeok</a>
-            <button class="menu-toggle" id="mobile-menu" type="button" aria-label="메뉴 열기" aria-expanded="false">
-                <span></span><span></span><span></span>
+<body class="bg-gray-50 font-sans text-gray-900 antialiased">
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-gray-50/85 backdrop-blur-xl">
+        <nav class="mx-auto flex min-h-[4rem] w-full max-w-[70rem] items-center justify-between px-5 sm:px-8" aria-label="주요 메뉴">
+            <a href="#home" class="text-[1rem] font-extrabold text-gray-900">YoungSeok</a>
+            <button id="mobile-menu" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-900 sm:hidden" aria-label="메뉴 열기" aria-expanded="false">
+                <span class="sr-only">메뉴</span>
+                <span class="flex flex-col gap-1.5">
+                    <span class="block h-0.5 w-4 rounded-full bg-gray-900"></span>
+                    <span class="block h-0.5 w-4 rounded-full bg-gray-900"></span>
+                    <span class="block h-0.5 w-4 rounded-full bg-gray-900"></span>
+                </span>
             </button>
-            <ul class="nav-links" id="nav-menu">
-                <li><a href="#work">Work</a></li>
-                <li><a href="#apps">Apps</a></li>
-                <li><a href="#stack">Stack</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="hidden items-center gap-1 sm:flex">
+                <a class="rounded-full px-4 py-2 text-[0.875rem] font-bold text-gray-600 transition hover:bg-accent-soft hover:text-accent" href="#work">Work</a>
+                <a class="rounded-full px-4 py-2 text-[0.875rem] font-bold text-gray-600 transition hover:bg-accent-soft hover:text-accent" href="#apps">Apps</a>
+                <a class="rounded-full px-4 py-2 text-[0.875rem] font-bold text-gray-600 transition hover:bg-accent-soft hover:text-accent" href="#stack">Stack</a>
+                <a class="rounded-full px-4 py-2 text-[0.875rem] font-bold text-gray-600 transition hover:bg-accent-soft hover:text-accent" href="#contact">Contact</a>
+            </div>
+        </nav>
+        <div id="mobile-nav" class="hidden border-t border-gray-200 bg-white px-5 py-3 shadow-card sm:hidden">
+            <div class="mx-auto grid max-w-[70rem] gap-1">
+                <a class="rounded-2xl px-4 py-3 text-[0.9375rem] font-bold text-gray-700 hover:bg-gray-100" href="#work">Work</a>
+                <a class="rounded-2xl px-4 py-3 text-[0.9375rem] font-bold text-gray-700 hover:bg-gray-100" href="#apps">Apps</a>
+                <a class="rounded-2xl px-4 py-3 text-[0.9375rem] font-bold text-gray-700 hover:bg-gray-100" href="#stack">Stack</a>
+                <a class="rounded-2xl px-4 py-3 text-[0.9375rem] font-bold text-gray-700 hover:bg-gray-100" href="#contact">Contact</a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="hero reveal" id="home">
-            <p class="eyebrow">Android Developer</p>
-            <h1>Android 앱을<br>제품답게 설계하고 구현합니다.</h1>
-            <p class="hero-copy">Compose 기반 UI, 앱 아키텍처, 접근성, 디바이스 통신까지 사용자가 실제로 지나가는 흐름을 기준으로 정리합니다.</p>
-            <div class="hero-actions">
-                <a class="primary-link" href="#apps">프로젝트 보기</a>
-                <a class="text-link" href="mailto:cys020628@naver.com">cys020628@naver.com</a>
+    <main id="home">
+        <section class="mx-auto flex min-h-[36rem] w-full max-w-[70rem] flex-col justify-center px-5 pb-[5.5rem] pt-[8rem] sm:px-8 lg:min-h-[42rem] lg:pb-[7.5rem] lg:pt-[9rem]">
+            <p class="text-[0.875rem] font-extrabold leading-[1.5] text-accent">Android Developer</p>
+            <h1 class="mt-5 max-w-[48rem] text-[2.5rem] font-black leading-[1.12] tracking-[0] text-gray-900 sm:text-[3.5rem] lg:text-[4.25rem]">
+                사용자가 오래 머무는<br class="hidden sm:block"> Android 경험을 만듭니다.
+            </h1>
+            <p class="mt-6 max-w-[42rem] text-[1.0625rem] font-medium leading-[1.7] text-gray-600 sm:text-[1.125rem]">
+                Compose UI, 앱 아키텍처, 접근성, BLE/Serial 통신까지 제품의 흐름을 끊기지 않게 설계하고 구현합니다.
+            </p>
+            <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+                <a href="#work" class="inline-flex min-h-14 items-center justify-center rounded-full bg-accent px-7 text-[1rem] font-bold text-white shadow-cta transition duration-200 ease-toss hover:bg-accent-pressed">대표 작업 보기</a>
+                <a href="mailto:cys020628@naver.com" class="inline-flex min-h-14 items-center justify-center rounded-full bg-white px-7 text-[1rem] font-bold text-gray-800 shadow-card transition duration-200 ease-toss hover:-translate-y-0.5 hover:shadow-card-hover">바로 연락하기</a>
             </div>
-            <div class="hero-summary" aria-label="핵심 경험 요약">
-                <span>Compose</span>
-                <span>Clean Architecture</span>
-                <span>TalkBack</span>
-                <span>Serial / BLE</span>
+            <div class="mt-12 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3" aria-label="핵심 역량">
+                <span class="rounded-full bg-accent-soft px-4 py-2 text-center text-[0.875rem] font-bold text-gray-700">Compose</span>
+                <span class="rounded-full bg-accent-soft px-4 py-2 text-center text-[0.875rem] font-bold text-gray-700">Clean Architecture</span>
+                <span class="rounded-full bg-accent-soft px-4 py-2 text-center text-[0.875rem] font-bold text-gray-700">TalkBack</span>
+                <span class="rounded-full bg-accent-soft px-4 py-2 text-center text-[0.875rem] font-bold text-gray-700">Serial / BLE</span>
             </div>
         </section>
 
-        <section class="intro-grid reveal" aria-label="프로필 요약">
-            <article>
-                <span class="mini-label">Focus</span>
-                <strong>앱 화면과 구조</strong>
-                <p>화면 상태, 네비게이션, 모듈 구조를 제품 흐름에 맞춰 정리합니다.</p>
+        <section class="mx-auto grid w-full max-w-[70rem] gap-4 px-5 py-[4.5rem] sm:px-8 md:grid-cols-3 lg:py-[5.5rem]" aria-label="Android 개발 강점">
+            <article class="reveal rounded-[1.5rem] bg-white p-7 shadow-card">
+                <p class="text-[0.875rem] font-extrabold text-accent">Focus</p>
+                <h2 class="mt-3 text-[1.5rem] font-extrabold leading-[1.34] text-gray-900">화면 상태를 예측 가능하게</h2>
+                <p class="mt-3 text-[1rem] font-medium leading-[1.7] text-gray-600">Compose, ViewModel, Navigation 흐름을 사용자가 이동하는 순서에 맞춰 정리합니다.</p>
             </article>
-            <article>
-                <span class="mini-label">Experience</span>
-                <strong>디바이스 연동</strong>
-                <p>Serial, BLE 데이터를 앱 화면과 안정적으로 연결한 경험이 있습니다.</p>
+            <article class="reveal rounded-[1.5rem] bg-white p-7 shadow-card">
+                <p class="text-[0.875rem] font-extrabold text-accent">Device</p>
+                <h2 class="mt-3 text-[1.5rem] font-extrabold leading-[1.34] text-gray-900">데이터 연결을 안정적으로</h2>
+                <p class="mt-3 text-[1rem] font-medium leading-[1.7] text-gray-600">BLE와 Serial 데이터를 앱 상태와 연결해 실시간 화면 경험으로 바꿉니다.</p>
             </article>
-            <article>
-                <span class="mini-label">Accessibility</span>
-                <strong>접근성 UX</strong>
-                <p>TalkBack 사용 흐름을 고려한 쇼핑 앱 개발에 참여했습니다.</p>
+            <article class="reveal rounded-[1.5rem] bg-white p-7 shadow-card">
+                <p class="text-[0.875rem] font-extrabold text-accent">Access</p>
+                <h2 class="mt-3 text-[1.5rem] font-extrabold leading-[1.34] text-gray-900">접근성을 제품 경험으로</h2>
+                <p class="mt-3 text-[1rem] font-medium leading-[1.7] text-gray-600">TalkBack 사용 흐름을 고려해 화면 탐색과 정보 전달 방식을 다듬습니다.</p>
             </article>
         </section>
 
-        <section id="work" class="reveal">
-            <div class="section-heading">
-                <p class="section-kicker">Selected Work</p>
-                <h2>업무 프로젝트</h2>
+        <section id="work" class="mx-auto w-full max-w-[70rem] px-5 py-[4.5rem] sm:px-8 lg:py-[5.5rem]">
+            <div class="mb-8">
+                <p class="text-[0.875rem] font-extrabold text-accent">Selected Work</p>
+                <h2 class="mt-2 text-[2rem] font-black leading-[1.16] text-gray-900 sm:text-[2.5rem]">문제를 앱 경험으로 바꾼 작업</h2>
             </div>
-            <div class="work-list">
-                <button class="work-row detail-trigger" type="button" data-project="elevator">
-                    <span class="work-index">01</span>
-                    <div>
-                        <h3>엘리베이터 LCD 시스템</h3>
-                        <p>Serial 패킷 분석, 실시간 층수 동기화, USB 콘텐츠 업데이트</p>
-                    </div>
-                    <span class="work-meta">Kotlin · Java · Device</span>
+            <div class="grid gap-4 md:grid-cols-2">
+                <button class="work-card reveal group rounded-[1.5rem] bg-white p-7 text-left shadow-card transition duration-300 ease-toss hover:-translate-y-1 hover:scale-[1.015] hover:shadow-card-hover" type="button" data-project="elevator">
+                    <span class="text-[0.875rem] font-bold text-gray-500">01</span>
+                    <h3 class="mt-5 text-[1.5rem] font-extrabold leading-[1.34] text-gray-900 group-hover:text-accent">엘리베이터 LCD 시스템</h3>
+                    <p class="mt-3 text-[1.0625rem] font-medium leading-[1.7] text-gray-600">Serial 패킷 분석, 실시간 층수 동기화, USB 콘텐츠 업데이트를 담당했습니다.</p>
+                    <p class="mt-8 text-[0.875rem] font-bold text-gray-500">Kotlin · Java · Device</p>
                 </button>
-                <button class="work-row detail-trigger" type="button" data-project="healthcare">
-                    <span class="work-index">02</span>
-                    <div>
-                        <h3>치매 예방 스마트 운동 앱</h3>
-                        <p>BLE 운동 데이터 수집, OAuth/API 연동, 운동 기록 차트</p>
-                    </div>
-                    <span class="work-meta">BLE · Retrofit · Chart</span>
+                <button class="work-card reveal group rounded-[1.5rem] bg-white p-7 text-left shadow-card transition duration-300 ease-toss hover:-translate-y-1 hover:scale-[1.015] hover:shadow-card-hover" type="button" data-project="healthcare">
+                    <span class="text-[0.875rem] font-bold text-gray-500">02</span>
+                    <h3 class="mt-5 text-[1.5rem] font-extrabold leading-[1.34] text-gray-900 group-hover:text-accent">치매 예방 스마트 운동 앱</h3>
+                    <p class="mt-3 text-[1.0625rem] font-medium leading-[1.7] text-gray-600">BLE 운동 데이터 수집, OAuth/API 연동, 운동 기록 차트 흐름을 구현했습니다.</p>
+                    <p class="mt-8 text-[0.875rem] font-bold text-gray-500">BLE · Retrofit · Chart</p>
                 </button>
             </div>
         </section>
 
-        <section id="apps" class="reveal">
-            <div class="section-heading">
-                <p class="section-kicker">Side Apps</p>
-                <h2>출시 앱 프로젝트</h2>
+        <section id="apps" class="mx-auto w-full max-w-[70rem] px-5 py-[4.5rem] sm:px-8 lg:py-[5.5rem]">
+            <div class="mb-8">
+                <p class="text-[0.875rem] font-extrabold text-accent">Released Apps</p>
+                <h2 class="mt-2 text-[2rem] font-black leading-[1.16] text-gray-900 sm:text-[2.5rem]">출시 경험으로 증명합니다</h2>
             </div>
-
-            <div class="app-showcase">
-                <article class="app-card sooum">
-                    <div class="app-hero">
-                        <div class="app-icon">S</div>
-                        <div class="app-headline">
-                            <span class="mini-label">Side Project</span>
-                            <h3>Sooum</h3>
-                            <p>익명 카드형 커뮤니티</p>
+            <div class="grid gap-4 lg:grid-cols-2">
+                <article class="reveal flex min-h-[28rem] flex-col rounded-[1.5rem] bg-white p-7 shadow-card">
+                    <div class="flex items-center gap-4">
+                        <div class="grid h-[4.5rem] w-[4.5rem] place-items-center rounded-[1.25rem] bg-gray-900 text-[2rem] font-black text-white">S</div>
+                        <div>
+                            <p class="text-[0.875rem] font-extrabold text-accent">Side Project</p>
+                            <h3 class="mt-1 text-[1.75rem] font-black leading-none text-gray-900">Sooum</h3>
+                            <p class="mt-2 text-[0.9375rem] font-bold text-gray-600">익명 카드형 커뮤니티</p>
                         </div>
                     </div>
-                    <div class="store-stats">
-                        <div><strong>iOS</strong><span>App Store</span></div>
-                        <div><strong>AOS</strong><span>Play Store</span></div>
-                        <div><strong>Paging3</strong><span>Loading 개선</span></div>
+                    <div class="mt-7 grid grid-cols-3 gap-3">
+                        <div class="border-t border-gray-200 pt-4"><strong class="block text-[1.25rem] leading-none">iOS</strong><span class="mt-2 block text-[0.75rem] font-extrabold uppercase text-gray-500">App Store</span></div>
+                        <div class="border-t border-gray-200 pt-4"><strong class="block text-[1.25rem] leading-none">AOS</strong><span class="mt-2 block text-[0.75rem] font-extrabold uppercase text-gray-500">Play Store</span></div>
+                        <div class="border-t border-gray-200 pt-4"><strong class="block text-[1.25rem] leading-none">Paging3</strong><span class="mt-2 block text-[0.75rem] font-extrabold uppercase text-gray-500">Loading</span></div>
                     </div>
-                    <p class="app-copy">기존 앱 리팩터링과 신규 기능 개발에 참여했습니다. Compose 화면 흐름, Paging3, FCM, Analytics 기반 개선을 담당했습니다.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/prj154654168" target="_blank" rel="noopener">GitHub</a>
-                        <a href="https://apps.apple.com/us/app/%EC%88%A8-sooum-%EC%B9%B4%EB%93%9C%ED%98%95-%EC%9D%B5%EB%AA%85-%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0/id6740403078" target="_blank" rel="noopener">App Store</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.phew.sooum&hl=ko" target="_blank" rel="noopener">Play Store</a>
+                    <p class="mt-7 text-[1rem] font-medium leading-[1.7] text-gray-600">기존 앱 리팩터링과 신규 기능 개발에 참여했습니다. Compose 화면 흐름, Paging3, FCM, Analytics 기반 개선을 담당했습니다.</p>
+                    <div class="mt-auto flex flex-col gap-2 pt-7 sm:flex-row sm:flex-wrap">
+                        <a class="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-5 text-[0.875rem] font-bold text-white" href="https://github.com/prj154654168" target="_blank" rel="noopener">GitHub</a>
+                        <a class="inline-flex min-h-11 items-center justify-center rounded-full border border-gray-200 px-5 text-[0.875rem] font-bold text-gray-800" href="https://apps.apple.com/us/app/%EC%88%A8-sooum-%EC%B9%B4%EB%93%9C%ED%98%95-%EC%9D%B5%EB%AA%85-%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0/id6740403078" target="_blank" rel="noopener">App Store</a>
+                        <a class="inline-flex min-h-11 items-center justify-center rounded-full border border-gray-200 px-5 text-[0.875rem] font-bold text-gray-800" href="https://play.google.com/store/apps/details?id=com.phew.sooum&hl=ko" target="_blank" rel="noopener">Play Store</a>
                     </div>
                 </article>
-
-                <article class="app-card pickforme">
-                    <div class="app-hero">
-                        <div class="app-icon">P</div>
-                        <div class="app-headline">
-                            <span class="mini-label">Sigongan Side Project</span>
-                            <h3>픽포미</h3>
-                            <p>시각장애인을 위한 AI 쇼핑 앱</p>
+                <article class="reveal flex min-h-[28rem] flex-col rounded-[1.5rem] bg-white p-7 shadow-card">
+                    <div class="flex items-center gap-4">
+                        <div class="grid h-[4.5rem] w-[4.5rem] place-items-center rounded-[1.25rem] bg-accent text-[2rem] font-black text-white">P</div>
+                        <div>
+                            <p class="text-[0.875rem] font-extrabold text-accent">Sigongan Side Project</p>
+                            <h3 class="mt-1 text-[1.75rem] font-black leading-none text-gray-900">픽포미</h3>
+                            <p class="mt-2 text-[0.9375rem] font-bold text-gray-600">시각장애인을 위한 AI 쇼핑 앱</p>
                         </div>
                     </div>
-                    <div class="store-stats">
-                        <div><strong>4.6</strong><span>App Store 평점</span></div>
-                        <div><strong>15</strong><span>평가</span></div>
-                        <div><strong>Shopping</strong><span>카테고리</span></div>
+                    <div class="mt-7 grid grid-cols-3 gap-3">
+                        <div class="border-t border-gray-200 pt-4"><strong class="block text-[1.25rem] leading-none">4.6</strong><span class="mt-2 block text-[0.75rem] font-extrabold uppercase text-gray-500">Rating</span></div>
+                        <div class="border-t border-gray-200 pt-4"><strong class="block text-[1.25rem] leading-none">15</strong><span class="mt-2 block text-[0.75rem] font-extrabold uppercase text-gray-500">Reviews</span></div>
+                        <div class="border-t border-gray-200 pt-4"><strong class="block text-[1.25rem] leading-none">TalkBack</strong><span class="mt-2 block text-[0.75rem] font-extrabold uppercase text-gray-500">Access</span></div>
                     </div>
-                    <p class="app-copy">상품 이미지와 상세 정보를 텍스트로 확인하고 AI에게 질문할 수 있는 쇼핑 앱입니다. TalkBack 접근성, MVI, Hilt, 멀티모듈 구조를 중심으로 참여했습니다.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Si-gongan" target="_blank" rel="noopener">Company GitHub</a>
-                        <a href="https://apps.apple.com/kr/app/%ED%94%BD%ED%8F%AC%EB%AF%B8/id6450741514" target="_blank" rel="noopener">App Store</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.sigonggan.pickforme&hl=ko" target="_blank" rel="noopener">Play Store</a>
+                    <p class="mt-7 text-[1rem] font-medium leading-[1.7] text-gray-600">상품 이미지와 상세 정보를 텍스트로 확인하고 AI에게 질문할 수 있는 쇼핑 앱입니다. TalkBack 접근성, MVI, Hilt, 멀티모듈 구조를 중심으로 참여했습니다.</p>
+                    <div class="mt-auto flex flex-col gap-2 pt-7 sm:flex-row sm:flex-wrap">
+                        <a class="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-5 text-[0.875rem] font-bold text-white" href="https://github.com/Si-gongan" target="_blank" rel="noopener">Company GitHub</a>
+                        <a class="inline-flex min-h-11 items-center justify-center rounded-full border border-gray-200 px-5 text-[0.875rem] font-bold text-gray-800" href="https://apps.apple.com/kr/app/%ED%94%BD%ED%8F%AC%EB%AF%B8/id6450741514" target="_blank" rel="noopener">App Store</a>
+                        <a class="inline-flex min-h-11 items-center justify-center rounded-full border border-gray-200 px-5 text-[0.875rem] font-bold text-gray-800" href="https://play.google.com/store/apps/details?id=com.sigonggan.pickforme&hl=ko" target="_blank" rel="noopener">Play Store</a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="stack" class="reveal">
-            <div class="section-heading">
-                <p class="section-kicker">Stack</p>
-                <h2>기술 스택</h2>
+        <section id="stack" class="mx-auto w-full max-w-[70rem] px-5 py-[4.5rem] sm:px-8 lg:py-[5.5rem]">
+            <div class="mb-8">
+                <p class="text-[0.875rem] font-extrabold text-accent">Stack</p>
+                <h2 class="mt-2 text-[2rem] font-black leading-[1.16] text-gray-900 sm:text-[2.5rem]">기술은 사용 맥락에 맞게 씁니다</h2>
             </div>
-            <div class="stack-board">
-                <article>
-                    <h3>Build UI</h3>
-                    <div class="skill-line"><span style="--value: 92%">Jetpack Compose</span></div>
-                    <div class="tag-row"><span>Navigation</span><span>ViewModel</span><span>DataStore</span></div>
+            <div class="grid gap-4 md:grid-cols-3">
+                <article class="reveal rounded-[1.5rem] bg-white p-7 shadow-card">
+                    <h3 class="text-[1.375rem] font-extrabold text-gray-900">Build UI</h3>
+                    <p class="mt-3 text-[1rem] font-medium leading-[1.7] text-gray-600">Compose 화면, 상태, 네비게이션을 제품 흐름 기준으로 구성합니다.</p>
+                    <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">Jetpack Compose</span><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">ViewModel</span><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">DataStore</span></div>
                 </article>
-                <article>
-                    <h3>Structure App</h3>
-                    <div class="skill-line"><span style="--value: 88%">Clean Architecture</span></div>
-                    <div class="tag-row"><span>MVI</span><span>MVVM</span><span>Multi Module</span><span>Hilt</span></div>
+                <article class="reveal rounded-[1.5rem] bg-white p-7 shadow-card">
+                    <h3 class="text-[1.375rem] font-extrabold text-gray-900">Structure App</h3>
+                    <p class="mt-3 text-[1rem] font-medium leading-[1.7] text-gray-600">Clean Architecture와 MVI/MVVM으로 변경에 강한 구조를 만듭니다.</p>
+                    <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">Clean Architecture</span><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">MVI</span><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">Hilt</span></div>
                 </article>
-                <article>
-                    <h3>Connect Data</h3>
-                    <div class="skill-line"><span style="--value: 84%">API / Device</span></div>
-                    <div class="tag-row"><span>Retrofit2</span><span>Coroutine</span><span>Flow</span><span>BLE</span><span>Serial</span></div>
+                <article class="reveal rounded-[1.5rem] bg-white p-7 shadow-card">
+                    <h3 class="text-[1.375rem] font-extrabold text-gray-900">Connect Data</h3>
+                    <p class="mt-3 text-[1rem] font-medium leading-[1.7] text-gray-600">API와 디바이스 데이터를 안정적인 앱 상태로 변환합니다.</p>
+                    <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">Retrofit2</span><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">Coroutine</span><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">BLE</span><span class="rounded-full bg-gray-100 px-3 py-2 text-[0.8125rem] font-bold text-gray-700">Serial</span></div>
                 </article>
             </div>
         </section>
 
-        <section id="contact" class="contact-section reveal">
-            <p class="section-kicker">Contact</p>
-            <h2>Android 앱 개발 관련 연락을 기다립니다.</h2>
-            <p class="contact-copy">프로젝트 구조 개선, Compose 화면 구현, 디바이스 연동이 필요한 팀과 빠르게 이야기할 수 있습니다.</p>
-            <div class="contact-links">
-                <a href="mailto:cys020628@naver.com">Email</a>
-                <a href="https://github.com/cys020628" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://velog.io/@cys020628" target="_blank" rel="noopener">Tech Blog</a>
+        <section id="contact" class="mx-auto w-full max-w-[70rem] px-5 py-[5.5rem] sm:px-8 lg:py-[7.5rem]">
+            <div class="reveal rounded-[1.5rem] bg-gray-900 px-6 py-10 shadow-card sm:px-10 sm:py-14">
+                <p class="text-[0.875rem] font-extrabold text-accent">Contact</p>
+                <h2 class="mt-3 max-w-[44rem] text-[2rem] font-black leading-[1.16] text-white sm:text-[2.5rem]">앱의 구조와 사용성을 함께 개선할 Android 개발자가 필요하다면 이야기해요.</h2>
+                <p class="mt-5 max-w-[39rem] text-[1.0625rem] font-medium leading-[1.7] text-gray-400">화면 구현만이 아니라 상태 관리, 접근성, 디바이스 연동까지 함께 정리합니다.</p>
+                <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <a href="mailto:cys020628@naver.com" class="inline-flex min-h-14 items-center justify-center rounded-full bg-accent px-7 text-[1rem] font-bold text-white shadow-cta transition duration-200 ease-toss hover:bg-accent-pressed">Email 보내기</a>
+                    <a href="https://github.com/cys020628" target="_blank" rel="noopener" class="inline-flex min-h-14 items-center justify-center rounded-full bg-white/10 px-7 text-[1rem] font-bold text-white transition duration-200 ease-toss hover:bg-white/20">GitHub 보기</a>
+                    <a href="https://velog.io/@cys020628" target="_blank" rel="noopener" class="inline-flex min-h-14 items-center justify-center rounded-full bg-white/10 px-7 text-[1rem] font-bold text-white transition duration-200 ease-toss hover:bg-white/20">Tech Blog 보기</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <div class="modal-backdrop" id="project-modal" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <button class="modal-close" type="button" aria-label="상세 창 닫기">×</button>
-            <p class="section-kicker" id="modal-label"></p>
-            <h2 id="modal-title"></h2>
-            <p id="modal-summary"></p>
-            <div class="modal-content" id="modal-content"></div>
+    <div id="project-modal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-gray-900/60 px-5 py-6 backdrop-blur-xl" aria-hidden="true">
+        <div class="relative max-h-[88vh] w-full max-w-[52rem] overflow-y-auto rounded-[1.5rem] bg-white p-6 shadow-card sm:p-8" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button id="modal-close" type="button" class="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-[1.5rem] leading-none text-gray-900" aria-label="상세 창 닫기">×</button>
+            <p id="modal-label" class="text-[0.875rem] font-extrabold text-accent"></p>
+            <h2 id="modal-title" class="mt-2 pr-12 text-[2rem] font-black leading-[1.16] text-gray-900"></h2>
+            <p id="modal-summary" class="mt-4 max-w-[39rem] text-[1.0625rem] font-medium leading-[1.7] text-gray-600"></p>
+            <div id="modal-content" class="mt-8 grid gap-3 md:grid-cols-3"></div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 최영석. Android Developer Portfolio.</p>
+    <footer class="border-t border-gray-200 px-5 py-10 text-center sm:px-8">
+        <p class="text-[0.875rem] font-medium text-gray-500">© 2026 최영석. Android Developer Portfolio.</p>
     </footer>
 
     <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu');
-        const navMenu = document.getElementById('nav-menu');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            const isOpen = mobileMenuBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = height > 0 ? (window.scrollY / height) * 100 : 0;
-            document.getElementById('scroll-progress').style.width = scrolled + '%';
-        });
-
-        const sections = document.querySelectorAll('section[id]');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                if (window.scrollY >= section.offsetTop - 220) current = section.id;
-            });
-            navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current));
-        });
-
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealOnScroll = () => {
-            revealElements.forEach(el => {
-                if (el.getBoundingClientRect().top <= window.innerHeight * 0.86) {
-                    el.classList.add('active');
-                }
-            });
-        };
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
-
         const projectDetails = {
             elevator: {
                 label: 'Company Work 01',
@@ -261,46 +271,80 @@
             }
         };
 
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const mobileNav = document.getElementById('mobile-nav');
         const modal = document.getElementById('project-modal');
+        const closeModal = document.getElementById('modal-close');
         const modalLabel = document.getElementById('modal-label');
         const modalTitle = document.getElementById('modal-title');
         const modalSummary = document.getElementById('modal-summary');
         const modalContent = document.getElementById('modal-content');
-        const closeModal = document.querySelector('.modal-close');
 
-        const openProjectModal = (projectId) => {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileNav.classList.toggle('hidden') === false;
+            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        mobileNav.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        const showModal = (projectId) => {
             const detail = projectDetails[projectId];
             if (!detail) return;
+
             modalLabel.textContent = detail.label;
             modalTitle.textContent = detail.title;
             modalSummary.textContent = detail.summary;
             modalContent.innerHTML = detail.sections.map(([heading, items]) => `
-                <section class="modal-section">
-                    <h3>${heading}</h3>
-                    <ul>${items.map(item => `<li>${item}</li>`).join('')}</ul>
+                <section class="rounded-[1rem] bg-gray-50 p-5">
+                    <h3 class="text-[0.9375rem] font-extrabold uppercase text-accent">${heading}</h3>
+                    <ul class="mt-4 grid gap-2">
+                        ${items.map((item) => `<li class="text-[0.9375rem] font-medium leading-[1.6] text-gray-600">${item}</li>`).join('')}
+                    </ul>
                 </section>
             `).join('');
-            modal.classList.add('active');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
             modal.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('modal-open');
+            document.body.classList.add('overflow-hidden');
             closeModal.focus();
         };
 
         const hideModal = () => {
-            modal.classList.remove('active');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
             modal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('modal-open');
+            document.body.classList.remove('overflow-hidden');
         };
 
-        document.querySelectorAll('.detail-trigger').forEach(card => {
-            card.addEventListener('click', () => openProjectModal(card.dataset.project));
+        document.querySelectorAll('.work-card').forEach((card) => {
+            card.addEventListener('click', () => showModal(card.dataset.project));
         });
+
         closeModal.addEventListener('click', hideModal);
-        modal.addEventListener('click', event => {
+        modal.addEventListener('click', (event) => {
             if (event.target === modal) hideModal();
         });
-        window.addEventListener('keydown', event => {
+        window.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') hideModal();
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.remove('opacity-0', 'translate-y-7');
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                revealObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.18 });
+
+        document.querySelectorAll('.reveal').forEach((element) => {
+            element.classList.add('opacity-0', 'translate-y-7', 'transition', 'duration-700', 'ease-toss');
+            revealObserver.observe(element);
         });
     </script>
 </body>

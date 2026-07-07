@@ -40,12 +40,12 @@ export function HeroSection() {
     <section className="mx-auto flex min-h-[34rem] w-full max-w-5xl flex-col justify-center px-5 py-22 sm:px-8 lg:py-30">
       <p className="text-caption font-bold text-accent">Android Developer</p>
       <h1 className="mt-5 max-w-3xl text-[2.5rem] font-extrabold leading-[1.12] text-gray-900 sm:text-display">
-        Android 앱을
+        사용자가 오래 머무는
         <br />
-        제품답게 설계하고 구현합니다.
+        Android 경험을 만듭니다.
       </h1>
       <p className="mt-6 max-w-2xl text-body text-gray-600">
-        Compose 기반 UI, 앱 아키텍처, 접근성, 디바이스 통신까지 사용자가 실제로 지나가는 흐름을 기준으로 정리합니다.
+        Compose UI, 앱 아키텍처, 접근성, BLE/Serial 통신까지 제품의 흐름을 끊기지 않게 설계하고 구현합니다.
       </p>
       <div className="mt-10 flex flex-wrap gap-3">
         {heroKeywords.map((keyword) => (
@@ -90,7 +90,10 @@ export function ContactSection() {
     <section className="mx-auto w-full max-w-5xl px-5 py-22 sm:px-8 lg:py-30">
       <div className="rounded-toss bg-gray-900 px-6 py-10 sm:px-10 sm:py-14">
         <p className="text-caption font-bold text-accent">Contact</p>
-        <h2 className="mt-3 max-w-2xl text-headline text-white">Android 앱 개발 관련 연락을 기다립니다.</h2>
+        <h2 className="mt-3 max-w-2xl text-headline text-white">앱의 구조와 사용성을 함께 개선할 Android 개발자가 필요하다면 이야기해요.</h2>
+        <p className="mt-5 max-w-xl text-body text-gray-400">
+          화면 구현만이 아니라 상태 관리, 접근성, 디바이스 연동까지 함께 정리합니다.
+        </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href={primaryContact.href}
